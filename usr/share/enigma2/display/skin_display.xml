@@ -155,8 +155,8 @@
 		     <convert type="ConditionalShowHide"/>
 	    </widget>
 	</screen>
-    <!-- LCD screen InfoBarMoviePlayer -->	
-    <screen name="InfoBarMoviePlayerSummary" position="0,0" size="256,64">
+    <!-- LCD screen InfoBarMoviePlayer E2 -->	
+    <screen name="MoviePlayerSummary" position="0,0" size="256,64">
 	    <widget source="global.CurrentTime" render="Label" position="0,0" size="255,35" font="FdLcD;35" halign="right" valign="center" noWrap="1">
 		     <convert type="ClockToText">Format:%H:%M</convert>
 	    </widget>
@@ -239,13 +239,20 @@
         <widget name="scan_progress" position="0,0" borderWidth="1" size="256,30"/>
         <widget name="Service" position="0,32" size="256,32" font="FdLcD;30" transparent="1"/>
     </screen>
-    <!-- LCD screen Simple Summary -->	
-    <screen name="SimpleSummary" position="0,0" size="256,64">
+    <!-- LCD screen Simple Summary MoviePlayer -->	
+    <!--screen name="SimpleSummary" position="0,0" size="256,64">
         <widget source="parent.Title" render="RollerCharLCDLong" position="0,0" size="256,32" font="FdLcD;30" noWrap="1"/>
         <widget source="global.CurrentTime" render="Label" position="0,32" size="256,32" font="FdLcD;30">
 		     <convert type="ClockToText">WithSeconds</convert>
         </widget>
-    </screen>
+    </screen -->	
+    <!-- LCD screen Simple Summary EMC -->	
+    <screen name="SimpleSummary" position="0,0" size="256,64">
+        <widget source="global.CurrentTime" render="Label" position="0,17" size="256,32" font="FdLcD;30">
+		     <convert type="ClockToText">WithSeconds</convert>
+        </widget>
+		<panel name="MovieSelectionSummary"/>
+    </screen>	
     <!-- LCD screen PluginBrowser -->	
     <screen name="PluginBrowserSummary" position="0,0" size="256,64">
         <widget source="entry" render="RollerCharLCDLong" position="0,0" size="256,32" font="FdLcD;30" noWrap="1"/>
@@ -300,7 +307,8 @@
 	</screen>
     <!-- FdLcD screen EMCMoviePlayerSummary -->
     <screen name="EMCMoviePlayerSummary" position="0,0" size="256,64">
-		<panel name="InfoBarMoviePlayerSummary"/>
+	    <ePixmap pixmap="/usr/share/enigma2/display/skin_default/play.png" position="135,10" size="23,20"/>
+		<panel name="MoviePlayerSummary"/>
 	</screen>
 	<!-- JobView Summary -->	
 	<screen name="JobView_summary" position="0,0" size="255,64">
