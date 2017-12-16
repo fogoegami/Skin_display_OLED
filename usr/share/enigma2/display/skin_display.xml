@@ -144,7 +144,7 @@
 		     <convert type="ClockToText">Format:%H:%M</convert>
         </widget>
         <widget source="global.CurrentTime" render="Label" position="0,35" size="256,30" font="FdLcD;22" halign="center" valign="center" noWrap="1">
-		     <convert type="ClockToText">Date</convert>
+		     <convert type="ClockToText">FullDate</convert>
         </widget>
 	    <widget source="session.RecordState" render="Pixmap" pixmap="rec.png" position="38,18" size="60,24">
 		     <convert type="ConfigEntryTest">config.usage.blinking_rec_symbol_during_recording,True,CheckSourceBoolean</convert>
@@ -337,11 +337,10 @@
 	</screen>
 	<screen name="EventView_summary" position="0,0" size="255,64">
 		<widget source="parent.Title" render="Label" position="0,0" size="160,22" font="FdLcD;17" halign="left" noWrap="1"/>
-		<widget source="parent.summary_description" render="Label" position="0,22" size="255,44" font="FdLcD;13"/>
 	</screen>
 	<screen name="EventViewSimple_summary" position="0,0" size="255,64">
 		<widget source="parent.Title" render="Label" position="0,0" size="160,22" font="FdLcD;17" halign="left" noWrap="1"/>
-		<widget source="parent.summary_description" render="Label" position="0,22" size="255,44" font="FdLcD;13"/>
+		<widget source="parent.summary_description" render="Label" position="0,43" size="255,20" font="FdLcD;13"/>
 	</screen>	
 	<!-- EPG Screens -->
 	<screen name="EPGSelection_summary" position="0,0" size="255,64">
