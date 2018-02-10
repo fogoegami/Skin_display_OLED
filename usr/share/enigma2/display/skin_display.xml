@@ -176,18 +176,19 @@
 	    </widget>			
     </screen>	
     <screen name="EMCSelectionSummary" position="0,0" size="255,64">
-        <widget source="parent.Service" position="195,0" size="65,20" render="Label" font="FdLcD;19">
+        <widget source="parent.Service" render="Label" position="0,47" size="110,35" font="FdLcD;18" noWrap="1">
 			<convert type="MovieInfo">FileSize</convert>
 	    </widget>
 	    <widget source="parent.Title" render="Label" position="0,0" size="175,35" font="FdLcD;12" halign="center" valign="top" noWrap="1"/>
-        <widget source="parent.Service" render="RollerCharLCDLong" position="0,18" size="255,39" font="FdLcD;23" noWrap="1">
+	    <widget source="parent.spacefree" render="Label" position="175,0" size="80,20" font="FdLcD;11" halign="center" valign="top" noWrap="1"/>		
+        <widget source="parent.Service" render="RollerCharLCDLong" position="0,15" size="255,27" font="FdLcD;23" noWrap="1">
  			<convert type="ServiceName">Name</convert>
  		</widget>
         <widget source="parent.Service" render="Label" position="115,45" size="80,35" font="FdLcD;19" noWrap="1">		
 			<convert type="EMCServiceTime">Duration</convert>
             <convert type="EMCClockToText">InHours</convert>			
  		</widget>
-	    <widget source="parent.spacefree" render="Label" position="0,50" size="110,35" font="FdLcD;13" halign="left" valign="top" noWrap="1"/>
+
 		<widget source="global.CurrentTime" render="Label" position="183,42" size="205,37" font="FdLcD;23" noWrap="1">
 			<convert type="ClockToText">Format:%H:%M</convert>
 		</widget>
