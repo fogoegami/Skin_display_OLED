@@ -174,25 +174,53 @@
 		     <convert type="ConfigEntryTest">config.usage.blinking_rec_symbol_during_recording,False,CheckSourceBoolean</convert>
 		     <convert type="ConditionalShowHide">Blink</convert>
 	    </widget>			
-    </screen>	
+    </screen>
+    <!-- Lista Peliculas EMC -->	
     <screen name="EMCSelectionSummary" position="0,0" size="255,64">
-        <widget source="parent.Service" render="Label" position="0,47" size="110,35" font="FdLcD;18" noWrap="1">
-			<convert type="MovieInfo">FileSize</convert>
-	    </widget>
 	    <widget source="parent.Title" render="Label" position="0,0" size="175,35" font="FdLcD;12" halign="center" valign="top" noWrap="1"/>
 	    <widget source="parent.spacefree" render="Label" position="175,0" size="80,20" font="FdLcD;11" halign="center" valign="top" noWrap="1"/>		
         <widget source="parent.Service" render="RollerCharLCDLong" position="0,15" size="255,27" font="FdLcD;23" noWrap="1">
  			<convert type="ServiceName">Name</convert>
- 		</widget>
+ 		</widget>	
+        <widget source="parent.Service" render="Label" position="0,47" size="110,35" font="FdLcD;18" noWrap="1">
+			<convert type="MovieInfo">FileSize</convert>
+	    </widget>		
         <widget source="parent.Service" render="Label" position="115,45" size="80,35" font="FdLcD;19" noWrap="1">		
 			<convert type="EMCServiceTime">Duration</convert>
             <convert type="EMCClockToText">InHours</convert>			
  		</widget>
-
 		<widget source="global.CurrentTime" render="Label" position="183,42" size="205,37" font="FdLcD;23" noWrap="1">
 			<convert type="ClockToText">Format:%H:%M</convert>
 		</widget>
+	    <widget source="session.RecordState" render="Pixmap" pixmap="rec.png" position="80,50" size="60,24">
+		     <convert type="ConfigEntryTest">config.usage.blinking_rec_symbol_during_recording,True,CheckSourceBoolean</convert>
+		     <convert type="ConditionalShowHide">Blink</convert>
+	    </widget>
+	    <widget source="session.RecordState" render="Pixmap" pixmap="rec.png" position="80,50" size="60,24">
+		     <convert type="ConfigEntryTest">config.usage.blinking_rec_symbol_during_recording,False,CheckSourceBoolean</convert>
+		     <convert type="ConditionalShowHide"/>
+	    </widget>		
 	</screen>
+    <!-- Lista Peliculas MoviePlayer standard E2 -->	
+	<screen name="MovieSelectionSummary" position="0,0" size="255,64">
+	    <widget source="parent.Service" render="Label" position="0,0" size="175,35" font="FdLcD;16" halign="center" valign="top" noWrap="1">
+		    <convert type="MovieInfo">RecordServiceName</convert>
+	    </widget>	
+	    <widget source="name" render="RollerCharLCDLong" position="0,27" size="255,20" font="FdLcD;17" halign="left" noWrap="1"/>
+	    <widget source="parent.Service" render="Label" position="0,45" size="140,20" font="FdLcD;19" halign="left" noWrap="1">
+		    <convert type="ServiceTime">Duration</convert>
+		    <convert type="ClockToText">AsLength</convert>
+	    </widget>
+	    <widget source="parent.Service" render="Label" position="85,45" size="100,35" font="FdLcD;19" noWrap="1">
+		    <convert type="MovieInfo">FileSize</convert>
+	    </widget>
+		<widget source="global.CurrentTime" render="Label" position="183,44" size="205,37" font="FdLcD;22" noWrap="1">
+			<convert type="ClockToText">Format:%H:%M</convert>
+		</widget>		
+		<panel name="SummaryIconsPanel"/>
+		<panel name="SummaryTunerStatusPanel"/>
+		<panel name="SummaryClockPanel"/>
+	</screen>		
     <screen name="MovieContextMenuSummary" position="0,0" size="255,64">
 	    <widget source="parent.Title" render="Label" position="0,0" size="170,18" font="FdLcD;15" halign="left" valign="top" noWrap="1"/>
 	    <widget source="selected" render="Label" position="0,16" size="255,32" font="FdLcD;14" halign="left" valign="top"/>
@@ -200,23 +228,6 @@
 		<panel name="SummaryTunerStatusPanel"/>
 		<panel name="SummaryClockPanel"/>
     </screen>
-	
-	<!--screen name="MovieSelectionSummary" position="0,0" size="255,64">
-	    <widget source="parent.Service" render="Label" position="0,0" size="170,22" font="FdLcD;17" halign="left" noWrap="1">
-		     <convert type="MovieInfo">RecordServiceName</convert>
-	    </widget>
-	    <widget source="name" render="RollerCharLCDLong" position="0,32" size="255,20" font="FdLcD;17" halign="left" noWrap="1"/>
-	    <widget source="parent.Service" render="Label" position="0,51" size="140,20" font="FdLcD;17" halign="left" valign="bottom" noWrap="1">
-		     <convert type="ServiceTime">Duration</convert>
-		     <convert type="ClockToText">AsLength</convert>
-	    </widget>
-	    <widget source="parent.Service" render="Label" position="65,51" size="80,20" font="FdLcD;17" halign="right" valign="bottom" noWrap="1">
-		     <convert type="MovieInfo">FileSize</convert>
-	    </widget>
-		<panel name="SummaryIconsPanel"/>
-		<panel name="SummaryTunerStatusPanel"/>
-		<panel name="SummaryClockPanel"/>
-	</screen-->	
     <!-- LCD screen Channelselection -->
     <screen name="ChannelSelection_summary" position="0,0" size="256,64">
 	    <widget source="parent.ServiceEvent" render="RollerCharLCDLong" position="0,0" size="256,27" font="FdLcD;27" noWrap="1">
